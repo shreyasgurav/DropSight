@@ -64,6 +64,8 @@ streamlit run app.py
 
 Open browser at: **http://localhost:8501**
 
+> **Note**: If `model.pkl` is missing (large file ~27MB), run `python src/model.py` to generate it.
+
 ## 📈 Model Performance
 
 | Model | Accuracy | Status |

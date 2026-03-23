@@ -19,3 +19,6 @@ venv/
 
 # Notebook checkpoints
 .ipynb_checkpoints/
+
+# Note: model.pkl is large (~27MB) but included in repo
+# If you clone this repo and model.pkl is missing, run: python src/model.py
