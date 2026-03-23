@@ -29,8 +29,10 @@ CHARTS_DIR = os.path.join(BASE_DIR, "output", "charts")
 os.makedirs(CHARTS_DIR, exist_ok=True)
 
 # --------------- config ---------------
+# Note: 'order' removed to avoid data leakage (order step correlates with page depth)
+# This gives more realistic accuracy based on behavioral features
 FEATURE_COLS = ["main_category", "colour", "location", "photo_type",
-                "price", "price_range", "country", "order", "month"]
+                "price", "price_range", "country", "month"]
 TARGET = "page"
 
 
@@ -73,7 +75,7 @@ def train_models(X_train, X_test, y_train, y_test):
     print(classification_report(y_test, rf_preds))
 
     # --- Logistic Regression ---
-    lr = LogisticRegression(max_iter=1000, random_state=42, n_jobs=-1)
+    lr = LogisticRegression(max_iter=1000, random_state=42)
     lr.fit(X_train, y_train)
     lr_preds = lr.predict(X_test)
     lr_acc = accuracy_score(y_test, lr_preds)

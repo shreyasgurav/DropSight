@@ -11,7 +11,7 @@ import os
 
 # --------------- paths ---------------
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RAW_CSV = os.path.join(BASE_DIR, "data", "e-shop clothing 2008.csv")
+RAW_CSV = os.path.join(BASE_DIR, "data", "e-shop_clothing_2008.csv")
 CLEAN_CSV = os.path.join(BASE_DIR, "data", "cleaned_data.csv")
 
 

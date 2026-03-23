@@ -194,7 +194,6 @@ elif page == "🔮 Drop-Off Predictor":
         with col2:
             colour = st.slider("Colour Code", 1, 14, 1)
             location = st.slider("Location Code", 1, 6, 1)
-            order_step = st.slider("Order Step", 1, 20, 1)
         with col3:
             month = st.slider("Month", 4, 8, 4)
             photo_type = st.selectbox("Photo Type", ["En-face", "Profile"])
@@ -203,6 +202,7 @@ elif page == "🔮 Drop-Off Predictor":
 
     if submitted:
         # Build feature vector (same order as FEATURE_COLS in model.py)
+        # Features: main_category, colour, location, photo_type, price, price_range, country, month
         features = np.array([[
             cat_map[main_cat],    # main_category
             colour,               # colour
@@ -211,7 +211,6 @@ elif page == "🔮 Drop-Off Predictor":
             df[df["main_category"] == main_cat]["price"].median(),  # price proxy
             price_map[price_range],  # price_range
             country,              # country
-            order_step,           # order
             month,                # month
         ]])
 
@@ -317,7 +316,7 @@ elif page == "🏆 Model Performance":
             le = LabelEncoder()
             data[col] = le.fit_transform(data[col].astype(str))
         feature_cols = ["main_category", "colour", "location", "photo_type",
-                        "price", "price_range", "country", "order", "month"]
+                        "price", "price_range", "country", "month"]
         X = data[feature_cols]
         y = data["page"]
         _, X_test, _, y_test = train_test_split(X, y, test_size=0.2,

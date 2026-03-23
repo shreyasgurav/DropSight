@@ -12,7 +12,7 @@ A Web Analytics AI project that predicts where users drop off on an e-commerce c
 ## 📁 Project Structure
 
 ```
-Web analytics Mini Project/
+DropSight/
 ├── app.py                      # Streamlit dashboard (main entry point)
 ├── requirements.txt            # Python dependencies
 ├── README.md                   # This file
@@ -24,14 +24,19 @@ Web analytics Mini Project/
 │   └── recommendations.py     # Business recommendation engine
 │
 ├── data/                       # Data files
-│   ├── e-shop clothing 2008.csv    # Raw dataset
-│   └── cleaned_data.csv            # Processed dataset
+│   ├── e-shop_clothing_2008.csv   # Raw dataset (Kaggle)
+│   └── cleaned_data.csv           # Processed dataset
 │
 └── output/                     # Generated artifacts
     ├── model.pkl              # Trained Random Forest model
     ├── model_metrics.csv      # Model comparison metrics
-    └── charts/                # EDA visualizations (8 PNG files)
+    └── charts/                # EDA visualizations (10 PNG files)
 ```
+
+## 📦 Dataset Source
+
+**Dataset**: [E-shop Clothing 2008](https://www.kaggle.com/datasets) from Kaggle  
+**Description**: Clickstream data from a Polish e-commerce clothing store (April-August 2008)
 
 ## 🚀 Quick Start
 
