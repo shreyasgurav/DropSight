@@ -1,0 +1,21 @@
+# OpenMemory - IDE/Assistant specific rules
+.windsurf/rules/openmemory.md
+
+# Python cache/bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment files (do not commit secrets)
+.env
+.env.*
+
+# OS/editor cruft
+.DS_Store
+*.DS_Store
+
+# Notebook checkpoints
+.ipynb_checkpoints/
